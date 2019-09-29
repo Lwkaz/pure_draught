@@ -156,7 +156,7 @@ function machines_turn() {
 }
 
 
-function move_robot_move(a, b, m) {
+function move_robot(a, b, m) {
     if(matrix[a][b] == 1) {
 
         document.getElementById(a + '-' + b).innerHTML = '';
