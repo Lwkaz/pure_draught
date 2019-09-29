@@ -2,6 +2,8 @@ const house_length = 45;
 const house_color_a = '#8C5821';
 const house_color_a_light = '#E4B24F';
 const house_color_b = 'white';
+const image1 = 'assets/img/transparent_piece.png';
+const image2 = 'assets/img/transparent_piece2.png';
 
 //houses
 const empty = 1;
@@ -36,10 +38,10 @@ for(var i = 0 ; i < 10; i++) {
         newDiv.setAttribute('onclick', "where_to_move(" + i + ", " + j + ")");
 
         var img = document.createElement('img');
-        img.src = 'transparent_piece.png';
+        img.src = image1;
 
         var img2 = document.createElement('img');
-        img2.src = 'transparent_piece2.png';
+        img2.src = image2;
 
         if(i %  2 == 0) {
             if(j %  2 == 0) {
@@ -120,7 +122,7 @@ function where_to_move(a, b) {
         }
 
         var piece = document.createElement('img');
-        piece.src = 'transparent_piece.png';
+        piece.src = image1;
         document.getElementById(a + '-' + b).appendChild(piece);
         matrix[a][b] = black_piece;
         rounds++;
@@ -161,7 +163,7 @@ function move_robot_move(a, b, m) {
         matrix[a][b] = 1;
          
         var piece = document.createElement('img');
-        piece.src = 'transparent_piece.png';
+        piece.src = image1;
         document.getElementById((a + m) + '-' + (b + m)).appendChild(piece);
         matrix[a + m][b + m] = black_piece;
         rounds++;
