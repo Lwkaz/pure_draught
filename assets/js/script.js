@@ -143,27 +143,29 @@ function machines_turn() {
                 for(var j = 0; j < 10; j++) {
                     if(matrix[i][j] == white_piece && matrix[i + 1][j + 1] == empty && matrix[i + 1][j - 1] == empty){
                         pieces_list[pieces_list_index] = [i, j];
+                        pieces_list_index++;
                     } 
                 }
             }
 
-            console.log(pieces_list[Math.floor(Math.random() * pieces_list.length)]);
+            dir = pieces_list[Math.floor(Math.random() * pieces_list.length)];
     
             mov = directions[Math.floor(Math.random() * 2)];
-            //move_robot_move(a, b, mov)
+            move_robot(dir[0], dir[1], mov);
         }
     //}
 }
 
 
 function move_robot(a, b, m) {
-    if(matrix[a][b] == 1) {
+    console.log(a + ', ' +  b + ', ' + m);
+    if(matrix[a][b] == 3) {
 
         document.getElementById(a + '-' + b).innerHTML = '';
         matrix[a][b] = 1;
          
         var piece = document.createElement('img');
-        piece.src = image1;
+        piece.src = image2;
         document.getElementById((a + m) + '-' + (b + m)).appendChild(piece);
         matrix[a + m][b + m] = black_piece;
         rounds++;
