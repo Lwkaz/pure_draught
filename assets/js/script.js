@@ -149,8 +149,9 @@ function machines_turn() {
             }
 
             dir = pieces_list[Math.floor(Math.random() * pieces_list.length)];
-    
+            console.log('teste: ' + dir);
             mov = directions[Math.floor(Math.random() * 2)];
+            
             move_robot(dir[0], dir[1], mov);
         }
     //}
