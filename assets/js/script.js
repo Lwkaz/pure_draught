@@ -166,7 +166,7 @@ function move_robot(a, b, m) {
          
         var piece = document.createElement('img');
         piece.src = image2;
-        document.getElementById((a + m) + '-' + (b + m)).appendChild(piece);
+        document.getElementById((a + 1) + '-' + (b + m)).appendChild(piece);
         matrix[a + m][b + m] = black_piece;
         rounds++;
         console.log(rounds);
